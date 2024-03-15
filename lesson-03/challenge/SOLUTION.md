@@ -6,7 +6,7 @@
 * **Modularity:** Separating code into components makes it easier to modify and reuse individual parts.
 * **Testability:** Modular code is simpler to test, leading to a more reliable application.
 
-## **Changes Made:**
+## **Changes Made**
 
 *   **Models:**  Defined a `Todo` model to represent todo items (using SQLAlchemy).
 *   **Routes:**  Separated Flask routes into a `todo_routes.py` file.
@@ -15,8 +15,8 @@
 
 ## **Running Tests**
 
-1. **Environment:** Ensure you have any necessary testing libraries (e.g., `unittest`) installed in your Python environment.
-2. **Command:** From your project's root directory, execute the following in your terminal:
+1. **Environment** Ensure you have any necessary testing libraries (e.g., `unittest`) installed in your Python environment.
+2. **Command** From your project's root directory, execute the following in your terminal:
    ```bash
    python -m venv venv
    source venv/bin/activate
