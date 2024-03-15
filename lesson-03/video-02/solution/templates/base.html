@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Todo App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+        <h1>Todo App</h1>
+
+        {% for todo in todo_list %}
+        <div class="todo">
+            <p>{{ todo.id }} | {{ todo.title }}</p>
+
+            {% if todo.completed == False %}
+            <span>Not Complete</span>
+            {% else %}
+            <span>Complete</span>
+            {% endif %}
+
+        </div>
+        {% endfor %}
+</body>
+
+</html>

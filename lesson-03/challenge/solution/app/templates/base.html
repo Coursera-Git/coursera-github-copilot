@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>To Do App</h1>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        form {
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        button[type="submit"] {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .todo {
+            background-color: #f2f2f2;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        .todo p {
+            margin: 0;
+        }
+
+        .todo span {
+            font-weight: bold;
+        }
+
+        .todo a {
+            margin-left: 10px;
+            text-decoration: none;
+            color: #4CAF50;
+        }
+    </style>
+
+    <form action="/add" method="post">
+        <label>Todo Title</label>
+        <input type="text" name="title" placeholder="Enter a new todo">
+        <br>
+        <button type="submit">Add Todo</button>
+    </form>
+
+    <hr>
+
+    {% for todo in todos %}
+        <div class="todo">
+            <p>{{ todo.id }} | {{ todo.title }}</p>
+
+            {% if todo.complete == False %}
+            <span> Not Complete</span>
+            {% else %}
+            <span> Complete</span>
+            {% endif %}
+            
+        </div>
+
+        <a href="toggle/{{ todo.id }}">
+        {{ "Mark Complete" if todo.complete == False else "Mark Not Complete" }}
+        </a>
+        <a href="delete/{{ todo.id }}">Delete</a>
+    {% endfor %}
+</body>
+</html>
